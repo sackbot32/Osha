@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     [Header("Jump Settings")]
     [Tooltip("How much force it adds when jumping")]
     public float jumpForce;
+    [Tooltip("How much gravity is changed after jumping")]
+    public float gravityMultAfterJump;
     [Tooltip("How long is the beam to detect the ground")]
     public float jumpDetectLength;
     //Data
@@ -84,6 +86,10 @@ public class PlayerController : MonoBehaviour
         if (dir.x == 0 && brakingAmmount != 0)
         {
             rb.velocity = new Vector2(rb.velocity.x / brakingAmmount, rb.velocity.y);
+            if(Mathf.Abs(rb.velocity.x) < 0.05f)
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
         }
     }
     /// <summary>
@@ -94,7 +100,9 @@ public class PlayerController : MonoBehaviour
         if(canJump)
         {
             canJump = false;
-            rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
+            //rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
+            rb.AddForce(Vector2.up * jumpForce * Time.deltaTime * gravityMultAfterJump);
+            rb.gravityScale = gravityMultAfterJump;
         }
     }
     /// <summary>
@@ -106,6 +114,7 @@ public class PlayerController : MonoBehaviour
         if (Physics2D.Raycast(feetTransform.position,Vector3.down, jumpDetectLength,layerMask))
         {
             canJump = true;
+            rb.gravityScale = 1;
         }
     }
 }

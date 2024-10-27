@@ -37,7 +37,7 @@ public class Hook : MonoBehaviour
     /// <summary>
     /// Destroys the hook avoiding errors
     /// </summary>
-    public void SaveDestruction()
+    public void SafeDestruction()
     {
         playerDisJoint.enabled = false;
         playerLineR.enabled = false;
