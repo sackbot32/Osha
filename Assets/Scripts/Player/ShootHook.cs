@@ -8,6 +8,18 @@ public class ShootHook : MonoBehaviour
     //Components
     [SerializeField]
     private GameObject hookPrefab;
+    [SerializeField]
+    private InputActionReference shootHookInput;
+    [SerializeField]
+    private InputActionReference mousePositionInput;
+    [SerializeField]
+    private InputActionReference rightJoyStickDirInput;
+    [SerializeField]
+    private InputActionReference shortenRopeInput;
+    [SerializeField]
+    private InputActionReference cutRopeInput;
+    [SerializeField]
+    private PlayerInput playerInput;
     //Settings
     [Header("Settings")]
     [Tooltip("The speed at which the proyectile travels")]
@@ -21,25 +33,42 @@ public class ShootHook : MonoBehaviour
     //Data
     private GameObject currentHook;
     private Vector3 mousePos;
+    private Vector2 dir;
 
 
     private void Start()
     {
         hookPrefab.GetComponent<Hook>().player = gameObject;
+        playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
     {
-        mousePos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
-        if (Input.GetMouseButtonDown(0))
+        if (playerInput.currentControlScheme.Equals(InputConstants.KEYBOARDMOUSESCHEME))
         {
-            Shoot(mousePos);
+            mousePos = new Vector3(Camera.main.ScreenToWorldPoint(mousePositionInput.action.ReadValue<Vector2>()).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+            if (shootHookInput.action.WasPressedThisFrame())
+            {
+                Shoot(mousePos);
+            }
         }
-        if (Input.GetMouseButton(1) && currentHook != null)
+        if (playerInput.currentControlScheme.Equals(InputConstants.CONTROLLERSCHEME))
+        {
+            dir = rightJoyStickDirInput.action.ReadValue<Vector2>();
+            if(dir != Vector2.zero)
+            {
+
+                if (shootHookInput.action.WasPressedThisFrame())
+                {
+                    Shoot(dir);
+                }
+            }
+        }
+        if (shortenRopeInput.action.IsPressed() && currentHook != null)
         {
             currentHook.GetComponent<Hook>().ChangeLength(-lengthAmountChange);
         }
-        if(Input.GetMouseButtonDown(2) && currentHook != null)
+        if(cutRopeInput.action.WasPressedThisFrame() && currentHook != null)
         {
             currentHook.GetComponent<Hook>().SafeDestruction();
         }
@@ -63,6 +92,25 @@ public class ShootHook : MonoBehaviour
 
     }
     /// <summary>
+    /// Shoots the hook in the direction it recives
+    /// </summary>
+    /// <param name="objective"></param>
+    private void Shoot(Vector2 dir)
+    {
+        if (currentHook != null)
+        {
+            currentHook.GetComponent<Hook>().SafeDestruction();
+        }
+        currentHook = Instantiate(hookPrefab, transform.position, Quaternion.identity);
+        currentHook.GetComponent<Hook>().ropeDistance = lengthRope;
+        StartCoroutine(DestroyProyectileOnTime());
+        currentHook.transform.up = dir.normalized;
+        currentHook.GetComponent<Rigidbody2D>().velocity = currentHook.transform.up * proyectileSpeed;
+
+
+    }
+
+    /// <summary>
     /// Using the target distance divided by the speed we will destroy the proyectile on the seconds given by that
     /// </summary>
     /// <returns></returns>
@@ -73,11 +121,14 @@ public class ShootHook : MonoBehaviour
             Vector3 firstPoint = currentHook.transform.position;
             float timeToDestroy = proyectileDistanceTarget/proyectileSpeed;
             yield return new WaitForSeconds(timeToDestroy);
-            float debugDistance = Vector2.Distance(firstPoint, currentHook.transform.position);
-            print("distancia: " + debugDistance);
-            if(!currentHook.GetComponent<HingeJoint2D>().enabled) 
+            if (currentHook != null)
             {
-                currentHook.GetComponent<Hook>().SafeDestruction();
+                float debugDistance = Vector2.Distance(firstPoint, currentHook.transform.position);
+                //print("distancia: " + debugDistance);
+                if(!currentHook.GetComponent<HingeJoint2D>().enabled) 
+                {
+                    currentHook.GetComponent<Hook>().SafeDestruction();
+                }
             }
         } else
         {

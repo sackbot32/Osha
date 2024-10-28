@@ -70,6 +70,14 @@ public class PlayerController : MonoBehaviour
         //When the absolute value of the value of velocity.x is bellow the maxSpeed, then it adds force in that direction
         if(Mathf.Abs(rb.velocity.x) <= maxSpeed)
         {
+            if(rb.velocity.x < 0 && dir.x > 0)
+            {
+                rb.velocity = new Vector2(1, rb.velocity.y);
+            }
+            if(rb.velocity.x > 0 && dir.x < 0)
+            {
+                rb.velocity = new Vector2(-1, rb.velocity.y);
+            }
             rb.AddForce(dir.x * Vector2.right * walkingSpeed);
         } else
         {
