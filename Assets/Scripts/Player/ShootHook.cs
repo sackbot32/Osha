@@ -19,6 +19,8 @@ public class ShootHook : MonoBehaviour
     [SerializeField]
     private InputActionReference cutRopeInput;
     [SerializeField]
+    private InputActionReference quickCutRopeInput;
+    [SerializeField]
     private PlayerInput playerInput;
     //Settings
     [Header("Settings")]
@@ -28,16 +30,25 @@ public class ShootHook : MonoBehaviour
     public float proyectileDistanceTarget;
     [Tooltip("How long is the rope when the hook gets to the target, idealy is the same as proyectileDistanceTarget")]
     public float lengthRope;
+    [Header("Shortening Settings")]
     [Tooltip("How much of the rope is changed when changing its length")]
     public float lengthAmountChange;
+    [Tooltip("How much of the rope is changed when changing its length on quick shortening")]
+    public float quickLengthAmountChange;
+    [Tooltip("When quick shortening how fast does it do it")]
+    public float quickShorteningRate;
+    [Tooltip("What at what length does the quickShortening ends")]
+    public float shorteningFinalLength;
     //Data
     private GameObject currentHook;
     private Vector3 mousePos;
     private Vector2 dir;
+    private bool shortening;
 
 
     private void Start()
     {
+        shortening = false;
         hookPrefab.GetComponent<Hook>().player = gameObject;
         playerInput = GetComponent<PlayerInput>();
     }
@@ -66,8 +77,16 @@ public class ShootHook : MonoBehaviour
         }
         if (shortenRopeInput.action.IsPressed() && currentHook != null)
         {
-            currentHook.GetComponent<Hook>().ChangeLength(-lengthAmountChange);
+            if(currentHook != null && GetComponent<DistanceJoint2D>().distance > shorteningFinalLength)
+            {
+                currentHook.GetComponent<Hook>().ChangeLength(-lengthAmountChange);
+            }
         }
+        if (quickCutRopeInput.action.WasPerformedThisFrame() && currentHook != null && !shortening)
+        {
+            StartCoroutine(QuickShorten());
+        }
+
         if(cutRopeInput.action.WasPressedThisFrame() && currentHook != null)
         {
             currentHook.GetComponent<Hook>().SafeDestruction();
@@ -135,6 +154,24 @@ public class ShootHook : MonoBehaviour
 
             yield return null;
         }
+    }
+    /// <summary>
+    /// Shortens the rope quickly and destroys the hook
+    /// </summary>
+    private IEnumerator QuickShorten()
+    {
+        shortening = true;
+        while(currentHook != null && GetComponent<DistanceJoint2D>().distance > shorteningFinalLength)
+        {
+            print(GetComponent<DistanceJoint2D>().distance);
+            currentHook.GetComponent<Hook>().ChangeLength(-quickLengthAmountChange);
+            yield return new WaitForSeconds(quickShorteningRate);
+        }
+        if (currentHook != null)
+        {
+            currentHook.GetComponent<Hook>().SafeDestruction();
+        }
+        shortening = false;
     }
 
 

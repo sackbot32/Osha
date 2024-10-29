@@ -51,6 +51,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "QuickRopeShorten",
+                    "type": "Button",
+                    "id": "5e341ee7-70e8-4d07-8f09-c1b0a797c257",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "MultiTap",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "CutRope",
                     "type": "Button",
                     "id": "5ce65de3-e4dc-46d4-a132-a60c5bdf222b",
@@ -309,6 +318,28 @@
                     "processors": "",
                     "groups": ";Controller",
                     "action": "ShortenRope",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c5c2380a-cbc9-4abd-85e0-b1987e4f1684",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "QuickRopeShorten",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "af5797ca-7f6b-452a-9e47-aa1cc4095c39",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "QuickRopeShorten",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

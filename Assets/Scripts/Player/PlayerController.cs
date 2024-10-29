@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
             }
         }
         //When the value of direction.x is 0, the velocity will start to be divided by brakingAmmount
-        if (dir.x == 0 && brakingAmmount != 0)
+        if (dir.x == 0 && brakingAmmount != 0 && canJump) 
         {
             rb.velocity = new Vector2(rb.velocity.x / brakingAmmount, rb.velocity.y);
             if(Mathf.Abs(rb.velocity.x) < 0.05f)

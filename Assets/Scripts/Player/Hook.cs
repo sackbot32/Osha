@@ -13,9 +13,12 @@ public class Hook : MonoBehaviour
     //Settings
     [Tooltip("what length will the rope have when it hits its target")]
     public float ropeDistance;
+    //Data
+    private bool hooked;
 
     private void Start()
     {
+        hooked = false;
         playerLineR = player.GetComponent<LineRenderer>();
         playerDisJoint = player.GetComponent<DistanceJoint2D>();
         hinJoint = GetComponent<HingeJoint2D>();
@@ -23,7 +26,7 @@ public class Hook : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("GrabPoint"))
+        if (collision.CompareTag("GrabPoint") && !hooked)
         {
             hinJoint.connectedBody = collision.GetComponent<Rigidbody2D>();
             hinJoint.enabled = true;
@@ -32,7 +35,13 @@ public class Hook : MonoBehaviour
             playerDisJoint.enabled = true;
             playerLineR.enabled = true;
             transform.up = collision.transform.position - transform.position;
+        } else if (!collision.CompareTag("Player") && !hooked)
+        {
+            print("choca con cosa que no son grab");
+            SafeDestruction();
         }
+
+        
     }
     /// <summary>
     /// Destroys the hook avoiding errors
