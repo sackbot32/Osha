@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class ShootHook : MonoBehaviour
 {
     //Components
+    [Header("Components")]
     [SerializeField]
     private GameObject hookPrefab;
     [SerializeField]
@@ -22,6 +23,8 @@ public class ShootHook : MonoBehaviour
     private InputActionReference quickCutRopeInput;
     [SerializeField]
     private PlayerInput playerInput;
+    [SerializeField]
+    private Transform shootingPivot;
     //Settings
     [Header("Settings")]
     [Tooltip("The speed at which the proyectile travels")]
@@ -58,6 +61,7 @@ public class ShootHook : MonoBehaviour
         if (playerInput.currentControlScheme.Equals(InputConstants.KEYBOARDMOUSESCHEME))
         {
             mousePos = new Vector3(Camera.main.ScreenToWorldPoint(mousePositionInput.action.ReadValue<Vector2>()).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+            shootingPivot.transform.right = (mousePos - transform.position).normalized;
             if (shootHookInput.action.WasPressedThisFrame())
             {
                 Shoot(mousePos);
@@ -66,14 +70,15 @@ public class ShootHook : MonoBehaviour
         if (playerInput.currentControlScheme.Equals(InputConstants.CONTROLLERSCHEME))
         {
             dir = rightJoyStickDirInput.action.ReadValue<Vector2>();
-            if(dir != Vector2.zero)
+            if (dir != Vector2.zero)
             {
+                shootingPivot.transform.right = dir.normalized;
 
                 if (shootHookInput.action.WasPressedThisFrame())
                 {
                     Shoot(dir);
                 }
-            }
+            } 
         }
         if (shortenRopeInput.action.IsPressed() && currentHook != null)
         {
@@ -102,7 +107,7 @@ public class ShootHook : MonoBehaviour
         {
             currentHook.GetComponent<Hook>().SafeDestruction();
         }
-        currentHook = Instantiate(hookPrefab, transform.position, Quaternion.identity);
+        currentHook = Instantiate(hookPrefab, shootingPivot.transform.GetChild(0).transform.GetChild(0).position, Quaternion.identity);
         currentHook.GetComponent<Hook>().ropeDistance = lengthRope;
         StartCoroutine(DestroyProyectileOnTime());
         currentHook.transform.up = (objective - currentHook.transform.position).normalized;
@@ -120,7 +125,7 @@ public class ShootHook : MonoBehaviour
         {
             currentHook.GetComponent<Hook>().SafeDestruction();
         }
-        currentHook = Instantiate(hookPrefab, transform.position, Quaternion.identity);
+        currentHook = Instantiate(hookPrefab, shootingPivot.transform.GetChild(0).transform.GetChild(0).position, Quaternion.identity);
         currentHook.GetComponent<Hook>().ropeDistance = lengthRope;
         StartCoroutine(DestroyProyectileOnTime());
         currentHook.transform.up = dir.normalized;

@@ -28,6 +28,7 @@ public class Hook : MonoBehaviour
     {
         if (collision.CompareTag("GrabPoint") && !hooked)
         {
+            hooked = true;
             hinJoint.connectedBody = collision.GetComponent<Rigidbody2D>();
             hinJoint.enabled = true;
             playerDisJoint.connectedBody = GetComponent<Rigidbody2D>();

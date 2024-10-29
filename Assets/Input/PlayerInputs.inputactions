@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "a48a0313-3f9f-49b7-a72b-d4b262b9e482",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -268,6 +277,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f77b07b5-ebf4-4742-b5f4-627e0d3d91aa",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5bc4c74d-4053-45ca-9bb4-da62c6b2c10c",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -280,7 +300,7 @@
                 {
                     "name": "",
                     "id": "e0cf1869-fc2c-426b-b9cd-7dc5d70f87ad",
-                    "path": "<Gamepad>/rightStickPress",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
@@ -313,7 +333,7 @@
                 {
                     "name": "",
                     "id": "37fe3a13-180c-4d9f-ad2f-25dd60c90c8a",
-                    "path": "<Gamepad>/rightShoulder",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
@@ -335,7 +355,7 @@
                 {
                     "name": "",
                     "id": "af5797ca-7f6b-452a-9e47-aa1cc4095c39",
-                    "path": "<Gamepad>/rightShoulder",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
@@ -357,7 +377,7 @@
                 {
                     "name": "",
                     "id": "08d0ea09-af78-47c4-b4ad-e07ec3a2d068",
-                    "path": "<Gamepad>/leftShoulder",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
@@ -373,6 +393,28 @@
                     "processors": "",
                     "groups": ";Controller",
                     "action": "JoystickDirection",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e2ea40e6-ccde-40ba-835c-ce7b25f837f1",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d6eef9f9-ec34-439f-99b1-9e744428729d",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
