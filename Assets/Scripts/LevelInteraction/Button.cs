@@ -10,19 +10,26 @@ public class Button : MonoBehaviour
     private Sprite onSprite;
     [SerializeField]
     private Sprite offSprite;
-
+    [Tooltip("The object it turns on")]
+    public GameObject interactableGameObject;
+    //Data
+    private InteractInterface interactableItem;
     private SpriteRenderer sP;
 
     private void Start()
     {
         sP = GetComponentInChildren<SpriteRenderer>();
+        interactableItem = interactableGameObject.GetComponent<InteractInterface>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.CompareTag("Player") || collision.CompareTag("GrabPoint"))
         {
-            //TurnOn
+            if (!interactableItem.GetIsOn())
+            {
+                interactableItem.TurnOn();
+            }
             sP.sprite = onSprite;
         }
     }
@@ -31,7 +38,7 @@ public class Button : MonoBehaviour
     {
         if (collision.CompareTag("Player") || collision.CompareTag("GrabPoint"))
         {
-            //TurnOn
+            interactableItem.TurnOff();
             sP.sprite = offSprite;
         }
     }
