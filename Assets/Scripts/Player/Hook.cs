@@ -26,7 +26,8 @@ public class Hook : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("GrabPoint") && !hooked)
+        
+        if ((collision.CompareTag("GrabPoint") || collision.CompareTag("Enemy")) && !hooked)
         {
             hooked = true;
             hinJoint.connectedBody = collision.GetComponent<Rigidbody2D>();
