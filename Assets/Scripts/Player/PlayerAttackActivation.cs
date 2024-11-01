@@ -27,7 +27,7 @@ public class PlayerAttackActivation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (attackInput.action.WasPressedThisFrame() && !attacking)
+        if (attackInput.action.WasPressedThisFrame() && !attacking && Time.timeScale == 1)
         {
             StartCoroutine(Attacking());
         }

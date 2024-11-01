@@ -18,6 +18,8 @@ public class EnemyHealth : MonoBehaviour, HealthInterface
     public float invulDuration;
     [Tooltip("Force of knockback")]
     public float takeDamageKnockback;
+    [Tooltip("Points given when dead")]
+    public int points;
     //Data
     private bool canTakeDamage;
     private void Start()
@@ -59,7 +61,8 @@ public class EnemyHealth : MonoBehaviour, HealthInterface
     }
     public void Death()
     {
-        print("Enemy death");
+        LevelManager.instance.AddPoint(points);
+        Destroy(gameObject);
     }
 
     

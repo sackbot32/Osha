@@ -58,7 +58,7 @@ public class ShootHook : MonoBehaviour
 
     void Update()
     {
-        if (playerInput.currentControlScheme.Equals(InputConstants.KEYBOARDMOUSESCHEME))
+        if (playerInput.currentControlScheme.Equals(UsefulConstants.KEYBOARDMOUSESCHEME) && Time.timeScale == 1)
         {
             mousePos = new Vector3(Camera.main.ScreenToWorldPoint(mousePositionInput.action.ReadValue<Vector2>()).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
             shootingPivot.transform.right = (mousePos - transform.position).normalized;
@@ -67,7 +67,7 @@ public class ShootHook : MonoBehaviour
                 Shoot(mousePos);
             }
         }
-        if (playerInput.currentControlScheme.Equals(InputConstants.CONTROLLERSCHEME))
+        if (playerInput.currentControlScheme.Equals(UsefulConstants.CONTROLLERSCHEME) && Time.timeScale == 1)
         {
             dir = rightJoyStickDirInput.action.ReadValue<Vector2>();
             if (dir != Vector2.zero)
@@ -79,6 +79,10 @@ public class ShootHook : MonoBehaviour
                     Shoot(dir);
                 }
             } 
+        }
+        if(Time.timeScale == 0 && currentHook != null)
+        {
+            currentHook.GetComponent<Hook>().SafeDestruction();
         }
         if (shortenRopeInput.action.IsPressed() && currentHook != null)
         {

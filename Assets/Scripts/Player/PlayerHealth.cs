@@ -26,6 +26,7 @@ public class PlayerHealth : MonoBehaviour,HealthInterface
         sprite = GetComponentInChildren<SpriteRenderer>();
         canTakeDamage = true;
         currentHealth = maxHealth;
+        LevelManager.instance.hud.UpdateHealth(currentHealth);
     }
 
     public void Heal(float ammount)
@@ -35,6 +36,7 @@ public class PlayerHealth : MonoBehaviour,HealthInterface
         {
             currentHealth = maxHealth;
         }
+        LevelManager.instance.hud.UpdateHealth(currentHealth);
     }
 
     public void TakeDamage(float damage, Vector2 damageSource)
@@ -52,12 +54,13 @@ public class PlayerHealth : MonoBehaviour,HealthInterface
                 Vector2 dir = new Vector2(transform.position.x, transform.position.y) - damageSource;
                 rb.AddForce(dir.normalized * takeDamageKnockback);
             }
+            LevelManager.instance.hud.UpdateHealth(currentHealth);
             StartCoroutine(AttackInvul());
         }
     }
     public void Death()
     {
-        print("Muerte");
+        LevelManager.instance.EndGame(false);
     }
 
     public IEnumerator AttackInvul()
