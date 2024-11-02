@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EnemyContactDamage : MonoBehaviour
 {
+    [Header("Settings")]
     public float damage;
     public bool destroySelf;
+    [Header("Teleport after damage")]
+    public bool teleportPlayer;
+    public Transform teleportPoint;
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -13,7 +17,15 @@ public class EnemyContactDamage : MonoBehaviour
             //if it detects that it is the player it tries to tell if it has health, if it does, it makes it take damage
             if (collision.TryGetComponent(out HealthInterface healthInterface))
             {
-                healthInterface.TakeDamage(damage,transform.position);
+                if (!teleportPlayer) 
+                { 
+                    healthInterface.TakeDamage(damage,transform.position);
+                } else
+                {
+                    healthInterface.TakeDamage(damage, Vector2.zero);
+                    collision.transform.position = teleportPoint.position;
+                }
+
                 //if destroySelf is true, it destroys itself
                 if(destroySelf)
                 {
