@@ -40,7 +40,7 @@ public class PlayerAttackActivation : MonoBehaviour
     private IEnumerator Attacking()
     {
         attacking = true;
-
+        AudioManager.instance.PlaySfx(4, true);
 
         attackCollider.enabled = true;
         yield return new WaitForSeconds(timeAttacking);

@@ -27,7 +27,9 @@ public class PlayerController : MonoBehaviour
     [Tooltip("How much gravity is changed after jumping")]
     public float gravityMultAfterJump;
     [Tooltip("How long is the beam to detect the ground")]
-    public float jumpDetectLength;
+    public float jumpDetectLength; 
+    [Tooltip("Mass when pushing down")]
+    public float massWhenDown;
     //Data
     private Vector2 direction;
     public bool canJump;
@@ -54,6 +56,7 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+        ChangeWeight(direction);
     }
 
     private void FixedUpdate()
@@ -108,11 +111,27 @@ public class PlayerController : MonoBehaviour
         if(canJump)
         {
             canJump = false;
+            AudioManager.instance.PlaySfx(0,true);
             //rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
             rb.AddForce(Vector2.up * jumpForce * Time.deltaTime * gravityMultAfterJump);
             rb.gravityScale = gravityMultAfterJump;
         }
     }
+    /// <summary>
+    /// Detects if the user is pushing down to turn his weight higher
+    /// </summary>
+    /// <param name="dir"></param>
+    private void ChangeWeight(Vector2 dir)
+    {
+        if(dir.y < 0)
+        {
+            rb.mass = massWhenDown;
+        } else
+        {
+            rb.mass = 1;
+        }
+    }
+
     /// <summary>
     /// Shoots a ray downwards to detect if we are hitting an item with the LayerMask Ground
     /// </summary>

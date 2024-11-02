@@ -13,12 +13,14 @@ public class LevelManager : MonoBehaviour
     //Data
     public int points;
 
-    
 
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         Time.timeScale = 1f;
-        instance = this;
         hud = GetComponent<HudManager>();
     }
 

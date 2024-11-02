@@ -29,6 +29,7 @@ public class Hook : MonoBehaviour
         
         if ((collision.CompareTag("GrabPoint") || collision.CompareTag("Enemy")) && !hooked)
         {
+            AudioManager.instance.PlaySfx(2);
             hooked = true;
             hinJoint.connectedBody = collision.GetComponent<Rigidbody2D>();
             hinJoint.enabled = true;
@@ -50,6 +51,7 @@ public class Hook : MonoBehaviour
     /// </summary>
     public void SafeDestruction()
     {
+        AudioManager.instance.PlaySfx(5);
         playerDisJoint.enabled = false;
         playerLineR.enabled = false;
         Destroy(gameObject);

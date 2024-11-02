@@ -48,7 +48,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: da78dca0a9348c9428a6580c46a1666c, type: 2}
   music: {fileID: 0}
-  sfxClips: []
+  sfxClips:
+  - {fileID: 8300000, guid: 3f67f9d0a2dbaab4899ba06fb778ac97, type: 3}
+  - {fileID: 8300000, guid: a3ff7d03edbc44d439b7386a65e3c664, type: 3}
+  - {fileID: 8300000, guid: 407d8e655b1a4b841b92ebac9fb3efaa, type: 3}
+  - {fileID: 8300000, guid: 14c16aa6b76163c4e8fb9bae71f5f38e, type: 3}
+  - {fileID: 8300000, guid: 5585be5a28d0a4c4a88a0a72b7a5cf85, type: 3}
+  - {fileID: 8300000, guid: 215415efdd0b62548808a56b27a3e26d, type: 3}
+  - {fileID: 8300000, guid: ca41058d8091b0f4fb411394658376f3, type: 3}
 --- !u!1 &5100877170047915943
 GameObject:
   m_ObjectHideFlags: 0

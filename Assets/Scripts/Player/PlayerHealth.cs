@@ -43,6 +43,7 @@ public class PlayerHealth : MonoBehaviour,HealthInterface
     {
         if(canTakeDamage)
         {
+            AudioManager.instance.PlaySfx(3, true);
             canTakeDamage = false;
             currentHealth -=damage;
             if(currentHealth <= 0 )

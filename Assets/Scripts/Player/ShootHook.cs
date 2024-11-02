@@ -107,6 +107,7 @@ public class ShootHook : MonoBehaviour
     /// <param name="objective"></param>
     private void Shoot(Vector3 objective)
     {
+        AudioManager.instance.PlaySfx(1);
         if (currentHook != null)
         {
             currentHook.GetComponent<Hook>().SafeDestruction();
@@ -125,6 +126,7 @@ public class ShootHook : MonoBehaviour
     /// <param name="objective"></param>
     private void Shoot(Vector2 dir)
     {
+        AudioManager.instance.PlaySfx(1);
         if (currentHook != null)
         {
             currentHook.GetComponent<Hook>().SafeDestruction();
@@ -170,6 +172,7 @@ public class ShootHook : MonoBehaviour
     private IEnumerator QuickShorten()
     {
         shortening = true;
+        AudioManager.instance.PlaySfx(6);
         while(currentHook != null && GetComponent<DistanceJoint2D>().distance > shorteningFinalLength)
         {
             print(GetComponent<DistanceJoint2D>().distance);
@@ -178,6 +181,7 @@ public class ShootHook : MonoBehaviour
         }
         if (currentHook != null)
         {
+            AudioManager.instance.StopSfx(6);
             currentHook.GetComponent<Hook>().SafeDestruction();
         }
         shortening = false;

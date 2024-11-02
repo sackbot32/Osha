@@ -16,7 +16,13 @@ public class AudioManager : MonoBehaviour
     //Data
     [SerializeField]
     private AudioClip[] sfxClips;
-    //Write sounds when added
+    //0 jump
+    //1 shootHook
+    //2 hooked
+    //3 playerDamage
+    //4 playerAttack
+    //5 cutRope
+    //6 shortenRope
     void Start()
     {
         musicSource = transform.GetChild(0).gameObject.GetComponent<AudioSource>();
@@ -69,6 +75,36 @@ public class AudioManager : MonoBehaviour
         }
         PlayerPrefs.SetFloat(UsefulConstants.SFXVOLPARAM, trueVolume);
         mixer.SetFloat(UsefulConstants.SFXVOLPARAM, trueVolume);
+    }
+
+    public void PlaySfx(int index,bool random = false)
+    {
+        if (random)
+        {
+            soundSource.pitch = Random.Range(0.9f, 1.1f);
+        } else
+        {
+            soundSource.pitch = 1;
+        } 
+        if (soundSource.clip != sfxClips[index])
+        {
+            soundSource.clip = sfxClips[index];
+            soundSource.Play();
+        } else
+        {
+            if(!soundSource.isPlaying)
+            {
+                soundSource.Play();
+            }
+        }
+    }
+
+    public void StopSfx(int index)
+    {
+        if (soundSource.clip == sfxClips[index] && soundSource.isPlaying)
+        {
+            soundSource.Stop();
+        }
     }
 
     
