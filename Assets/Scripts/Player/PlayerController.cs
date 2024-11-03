@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private InputActionReference jumpInput;
     private Transform feetTransform;
+    private Animator anim;
     [Header("Move Settings")]
     //Movement Settings
     [Tooltip("Player's walking speed")]
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         //Get the components
         rb = GetComponent<Rigidbody2D>();
+        anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
         //Initialize variables when needed
         direction = Vector2.zero;
         //Get the feet, which are the second child of the player
@@ -102,6 +104,14 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(0, rb.velocity.y);
             }
         }
+
+        if(rb.velocity.x != 0)
+        {
+            anim.SetBool("Walking", true);
+        } else
+        {
+            anim.SetBool("Walking", false);
+        }
     }
     /// <summary>
     /// Adds force upwards with the force indicated by the jumpForce variable
@@ -125,9 +135,11 @@ public class PlayerController : MonoBehaviour
     {
         if(dir.y < 0)
         {
+            anim.SetBool("Effort", true);
             rb.mass = massWhenDown;
         } else
         {
+            anim.SetBool("Effort", false);
             rb.mass = 1;
         }
     }
@@ -140,8 +152,12 @@ public class PlayerController : MonoBehaviour
         Debug.DrawRay(feetTransform.position, Vector3.down*jumpDetectLength, Color.red);
         if (Physics2D.Raycast(feetTransform.position,Vector3.down, jumpDetectLength,layerMask))
         {
+            anim.SetBool("Falling", false);
             canJump = true;
             rb.gravityScale = 1;
+        } else
+        {
+            anim.SetBool("Falling", true);
         }
     }
 }

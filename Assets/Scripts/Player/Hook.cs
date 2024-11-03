@@ -10,6 +10,7 @@ public class Hook : MonoBehaviour
     private LineRenderer playerLineR;
     private DistanceJoint2D playerDisJoint;
     private HingeJoint2D hinJoint;
+    private Animator anim;
     //Settings
     [Tooltip("what length will the rope have when it hits its target")]
     public float ropeDistance;
@@ -19,6 +20,7 @@ public class Hook : MonoBehaviour
     private void Start()
     {
         hooked = false;
+        anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
         playerLineR = player.GetComponent<LineRenderer>();
         playerDisJoint = player.GetComponent<DistanceJoint2D>();
         hinJoint = GetComponent<HingeJoint2D>();
@@ -31,6 +33,7 @@ public class Hook : MonoBehaviour
         {
             AudioManager.instance.PlaySfx(2);
             hooked = true;
+            anim.SetBool("Hooked", true);
             hinJoint.connectedBody = collision.GetComponent<Rigidbody2D>();
             hinJoint.enabled = true;
             playerDisJoint.connectedBody = GetComponent<Rigidbody2D>();
