@@ -13,6 +13,7 @@ public class PlayerDetect : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            AudioManager.instance.PlaySfx(7);
             parent.target = collision.transform;
         }
     }

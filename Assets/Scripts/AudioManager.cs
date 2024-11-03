@@ -23,6 +23,13 @@ public class AudioManager : MonoBehaviour
     //4 playerAttack
     //5 cutRope
     //6 shortenRope
+    //7 distanceEnemyPlayerDetect
+    //8 distanceEnemyPlayerShoot
+    //9 distanceEnemyDamage
+    //10 TurnOn
+    //11 TurnOff
+    //12 pointSound
+
     void Start()
     {
         musicSource = transform.GetChild(0).gameObject.GetComponent<AudioSource>();

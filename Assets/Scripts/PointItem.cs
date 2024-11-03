@@ -20,6 +20,7 @@ public class PointItem : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !gotten)
         {
+            AudioManager.instance.PlaySfx(12,true);
             LevelManager.instance.AddPoint(pointForWin);
             col.enabled = false;
             //For now ill disable it, it could do a animation later

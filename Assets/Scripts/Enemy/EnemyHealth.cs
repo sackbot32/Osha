@@ -35,6 +35,7 @@ public class EnemyHealth : MonoBehaviour, HealthInterface
         {
             canTakeDamage = false;
             currentHealth -= damage;
+            AudioManager.instance.PlaySfx(9, true);
             if (currentHealth <= 0)
             {
                 currentHealth = 0;

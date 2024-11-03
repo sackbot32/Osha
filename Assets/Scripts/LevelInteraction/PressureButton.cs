@@ -28,6 +28,7 @@ public class PressureButton : MonoBehaviour
         {
             if (!interactableItem.GetIsOn())
             {
+                AudioManager.instance.PlaySfx(10);
                 interactableItem.TurnOn();
             }
             sP.sprite = onSprite;
@@ -38,6 +39,7 @@ public class PressureButton : MonoBehaviour
     {
         if (collision.CompareTag("Player") || collision.CompareTag("GrabPoint"))
         {
+            AudioManager.instance.PlaySfx(11);
             interactableItem.TurnOff();
             sP.sprite = offSprite;
         }

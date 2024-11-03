@@ -59,6 +59,7 @@ public class DistanceEnemyShooting : MonoBehaviour
         yield return new WaitForSeconds(timeBetweenShooting);
         while(target != null)
         {
+            AudioManager.instance.PlaySfx(8,true);
             Instantiate(shotPrefab,shootPoint.position,Quaternion.identity).GetComponent<BulletMoving>().SetInfo(shootPoint.right,bulletSpeed,timeBeforeSelfDestruct);
             yield return new WaitForSeconds(timeBetweenShooting);
         }
