@@ -9,6 +9,8 @@ public class PlayerAttackActivation : MonoBehaviour
     [SerializeField]
     private Collider2D attackCollider;
     [SerializeField]
+    private SpriteRenderer[] hammerPose;
+    [SerializeField]
     private InputActionReference attackInput;
     //Settings
     [Header("Settings")]
@@ -22,6 +24,8 @@ public class PlayerAttackActivation : MonoBehaviour
     {
         attacking = false;
         attackCollider.enabled = false;
+        hammerPose[0].enabled = true;
+        hammerPose[1].enabled = false;
     }
 
     // Update is called once per frame
@@ -40,10 +44,14 @@ public class PlayerAttackActivation : MonoBehaviour
     private IEnumerator Attacking()
     {
         attacking = true;
+        hammerPose[0].enabled = false;
+        hammerPose[1].enabled = true;
         AudioManager.instance.PlaySfx(4, true);
 
         attackCollider.enabled = true;
         yield return new WaitForSeconds(timeAttacking);
+        hammerPose[0].enabled = true;
+        hammerPose[1].enabled = false;
         attackCollider.enabled = false;
         StartCoroutine(CoolDown());
 

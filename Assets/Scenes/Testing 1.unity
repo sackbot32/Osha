@@ -3146,6 +3146,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DistanceEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4776603879280707634, guid: 322e943d603cb394aa1d8104b563ab92, type: 3}
+      propertyPath: aimSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4776603879280707634, guid: 322e943d603cb394aa1d8104b563ab92, type: 3}
+      propertyPath: timeBetweenShooting
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

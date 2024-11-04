@@ -10,6 +10,8 @@ public class EnemyMovement : MonoBehaviour
     private Transform forwardDetect;
     private Transform groundDetect;
     private Transform jumpDetect;
+    private Animator anim;
+    private SpriteRenderer sRender;
     //Settings
     [Header("Settings")]
     [Tooltip("How fast it goes from side to side")]
@@ -32,6 +34,8 @@ public class EnemyMovement : MonoBehaviour
         forwardDetect = transform.GetChild(2).transform;
         groundDetect = transform.GetChild(3).transform;
         jumpDetect = transform.GetChild(4).transform;
+        anim = transform.GetChild(0).gameObject.GetComponent<Animator>();
+        sRender = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -43,6 +47,7 @@ public class EnemyMovement : MonoBehaviour
             //If when detecting wall it can tell it can jump it then it does it
             if(!Detection(jumpDetect.position, (jumpDetect.right * rb.velocity.x).normalized, detectWallLength))
             {
+                anim.SetBool("Falling", true);
                 Jump();
             } else
             {
@@ -58,6 +63,9 @@ public class EnemyMovement : MonoBehaviour
 
                 ChangeDetectPos();
             }
+        } else
+        {
+            anim.SetBool("Falling", false);
         }
         Move();
     }
@@ -84,6 +92,7 @@ public class EnemyMovement : MonoBehaviour
     private void ChangeDetectPos()
     {
         right = !right;
+        sRender.flipX = !right;
         forwardDetect.localPosition = new Vector2(-forwardDetect.localPosition.x, forwardDetect.localPosition.y);
         groundDetect.localPosition = new Vector2(-groundDetect.localPosition.x, groundDetect.localPosition.y);
         jumpDetect.localPosition = new Vector2(-jumpDetect.localPosition.x, jumpDetect.localPosition.y);
@@ -94,6 +103,7 @@ public class EnemyMovement : MonoBehaviour
     private void Move()
     {
         rb.velocity = new Vector2(right ? -speed : speed, rb.velocity.y);
+
     }
     /// <summary>
     /// Jumps with a given force
@@ -101,6 +111,7 @@ public class EnemyMovement : MonoBehaviour
     private void Jump()
     {
         rb.AddForce(transform.up *jumpForce);
+
     }
 
 }

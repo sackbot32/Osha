@@ -68,8 +68,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.7, y: 0.3}
+  m_Offset: {x: 0.048880104, y: -0.018139701}
+  m_Size: {x: 0.42157465, y: 0.09535473}
   m_Direction: 1
 --- !u!114 &8833178391600758701
 MonoBehaviour:
@@ -85,6 +85,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   destroySelf: 1
+  teleportPlayer: 0
+  teleportPoint: {fileID: 0}
 --- !u!114 &4488106722172467363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,8 +202,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ca2f14092d1c76e48b8a4c15720d02c5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

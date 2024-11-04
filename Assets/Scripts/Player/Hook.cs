@@ -16,6 +16,7 @@ public class Hook : MonoBehaviour
     public float ropeDistance;
     //Data
     private bool hooked;
+    private GameObject attachedGameObject;
 
     private void Start()
     {
@@ -35,6 +36,7 @@ public class Hook : MonoBehaviour
             hooked = true;
             anim.SetBool("Hooked", true);
             hinJoint.connectedBody = collision.GetComponent<Rigidbody2D>();
+            attachedGameObject = collision.gameObject;
             hinJoint.enabled = true;
             playerDisJoint.connectedBody = GetComponent<Rigidbody2D>();
             playerDisJoint.distance = ropeDistance;
@@ -48,6 +50,14 @@ public class Hook : MonoBehaviour
         }
 
         
+    }
+
+    private void Update()
+    {
+        if (attachedGameObject == null && hooked)
+        {
+            SafeDestruction();
+        }
     }
     /// <summary>
     /// Destroys the hook avoiding errors
