@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(rb.velocity.x != 0)
+        if(dir.x != 0)
         {
             anim.SetBool("Walking", true);
         } else
