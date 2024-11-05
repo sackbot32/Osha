@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6836630105270759777}
   - component: {fileID: 7267053218635240512}
-  m_Layer: 0
-  m_Name: ButtonOff
+  m_Layer: 6
+  m_Name: ButtonSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: eee0c0aa70a627640a1533f44f4962c3, type: 3}
+  m_Sprite: {fileID: 1098959487, guid: c8ace406b6a0bcf4095bc7986b55714b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5010867586560809843}
   - component: {fileID: 3086518935666102504}
   - component: {fileID: 7248540801469907158}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,6 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d38dfefa2bd52b419c0d34cdf3cbce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onSprite: {fileID: 21300000, guid: 7a50bd330a4d2434795a50db3b06bd7b, type: 3}
-  offSprite: {fileID: 21300000, guid: eee0c0aa70a627640a1533f44f4962c3, type: 3}
+  onSprite: {fileID: 2035234418, guid: c8ace406b6a0bcf4095bc7986b55714b, type: 3}
+  offSprite: {fileID: 1098959487, guid: c8ace406b6a0bcf4095bc7986b55714b, type: 3}
   interactableGameObject: {fileID: 0}

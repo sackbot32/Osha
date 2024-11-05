@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3747911377473564938}
   - component: {fileID: 7201940938491588040}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4038987939507636114}
   - component: {fileID: 7154538374844748061}
   - component: {fileID: 1020946001332628154}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CircleGrab
   m_TagString: GrabPoint
   m_Icon: {fileID: 0}

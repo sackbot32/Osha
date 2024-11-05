@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6097927977556169490}
   - component: {fileID: 1110298125279665705}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4921211950194144591}
   - component: {fileID: 7723664970306580058}
   - component: {fileID: 9138727937019579131}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BoxGrab
   m_TagString: GrabPoint
   m_Icon: {fileID: 0}
