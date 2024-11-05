@@ -387,7 +387,7 @@ MonoBehaviour:
   directionInput: {fileID: 5951653942276301026, guid: 2e0c97b7f623cd44ab32440e49b07161, type: 3}
   jumpInput: {fileID: -3770657149691154054, guid: 2e0c97b7f623cd44ab32440e49b07161, type: 3}
   walkingSpeed: 10
-  maxSpeed: 8
+  maxSpeed: 6.5
   brakingAmmount: 1.1
   jumpForce: 5000
   gravityMultAfterJump: 1.1
