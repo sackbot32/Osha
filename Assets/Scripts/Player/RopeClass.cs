@@ -52,7 +52,10 @@ public class RopeClass : MonoBehaviour
                 GenerateDataBasedOnDistance();
                 lineR.positionCount = howManyMiddlePoints;
             }
-            RopeVisualMovement();
+            if(disJoint.connectedBody != null)
+            {
+                RopeVisualMovement();
+            }
             RopeVisualWidth();
         }
         
