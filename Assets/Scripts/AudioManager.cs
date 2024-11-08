@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+
         musicSource = transform.GetChild(0).gameObject.GetComponent<AudioSource>();
         soundSource = transform.GetChild(1).gameObject.GetComponent<AudioSource>();
         //If there are not instances 

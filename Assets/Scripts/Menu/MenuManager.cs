@@ -17,6 +17,9 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        //Habria que implementar un settings de fps y vsync pero por ahora
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 0;
         if(soundSlider.Length > 0)
         {
             //soundSlider[0].onValueChanged.AddListener(AudioManager.instance.ChangeSfxVolume);
