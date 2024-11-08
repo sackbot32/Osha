@@ -434,8 +434,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Para cortar la cuerda pulsa boton central del raton o L2
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
-  m_sharedMaterial: {fileID: 6281279564853841700, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
+  m_sharedMaterial: {fileID: 6281279564853841700, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -967,8 +967,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pulsando e o R2 para atacar a donde estes apuntando
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
-  m_sharedMaterial: {fileID: 6281279564853841700, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
+  m_sharedMaterial: {fileID: 6281279564853841700, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1712,7 +1712,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.86587, y: 0.36347, z: -10}
+  m_LocalPosition: {x: -8.856209, y: 0.36363, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2158,8 +2158,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Si pulsas el boton de recoger dos veces rapidos recogeras rapidamente
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
-  m_sharedMaterial: {fileID: 6281279564853841700, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
+  m_sharedMaterial: {fileID: 6281279564853841700, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8148,8 +8148,8 @@ MonoBehaviour:
   m_text: "Apunta con el raton \no con joystick derecho\n\nDispara el gancho con
     click izquierdo o r1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
-  m_sharedMaterial: {fileID: 6281279564853841700, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
+  m_sharedMaterial: {fileID: 6281279564853841700, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -45464,8 +45464,8 @@ MonoBehaviour:
 
     para moverte'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
-  m_sharedMaterial: {fileID: 6281279564853841700, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
+  m_sharedMaterial: {fileID: 6281279564853841700, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -45662,8 +45662,8 @@ MonoBehaviour:
 
     para saltar'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
-  m_sharedMaterial: {fileID: 6281279564853841700, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
+  m_sharedMaterial: {fileID: 6281279564853841700, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -47217,8 +47217,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Si pulsas s o abajo \npesaras mas y los objetos\nno te moveran"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
-  m_sharedMaterial: {fileID: 6281279564853841700, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
+  m_sharedMaterial: {fileID: 6281279564853841700, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -47351,8 +47351,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Para recoger la cuerda pulsa boton derecho del raton o L1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
-  m_sharedMaterial: {fileID: 6281279564853841700, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
+  m_sharedMaterial: {fileID: 6281279564853841700, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -48123,8 +48123,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tocando el ascensor terminaras el nivel
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
-  m_sharedMaterial: {fileID: 6281279564853841700, guid: c5d05b1ce355b424ab5e3a1feaa6082f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
+  m_sharedMaterial: {fileID: 6281279564853841700, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -48679,6 +48679,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1224136118229874587, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1421764176664880230, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
       propertyPath: m_Name
       value: LevelInfo+UI
@@ -48687,6 +48691,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1003620424}
+    - target: {fileID: 5932405838441117355, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6673249615217178057, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.4760962
@@ -48725,6 +48733,58 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6673249615217178057, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155182901539272119, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155182901539272119, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155182901539272119, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155182901539272119, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155182901539272119, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8155182901539272119, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357935570878337540, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674699194815216442, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674699194815216442, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674699194815216442, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674699194815216442, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674699194815216442, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674699194815216442, guid: 470a560c67d3eb24db9bc49c8ba791d0, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

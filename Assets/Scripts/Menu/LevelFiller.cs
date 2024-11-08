@@ -26,10 +26,10 @@ public class LevelFiller : MonoBehaviour
             if(PlayerPrefs.GetInt(UsefulConstants.BEATENLEVELPREF) < (i-1))
             {
                 levelI.levelButton.interactable = false;
-                levelI.highScore.text = "No disponible";
+                levelI.highScore.text = "No <br>disponible";
             } else
             {
-                levelI.highScore.text = "HS: " + PlayerPrefs.GetInt(names.levelNames[i - (min + SceneManager.GetActiveScene().buildIndex)]).ToString("000000");
+                levelI.highScore.text = "HS: <br>" + PlayerPrefs.GetInt(names.levelNames[i - (min + SceneManager.GetActiveScene().buildIndex)]).ToString("000000");
 
             }
         }
