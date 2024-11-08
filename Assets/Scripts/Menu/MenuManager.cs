@@ -17,13 +17,19 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        if(soundSlider.Length > 0)
+        {
+            //soundSlider[0].onValueChanged.AddListener(AudioManager.instance.ChangeSfxVolume);
+            //soundSlider[1].onValueChanged.AddListener(AudioManager.instance.ChangeMusicVolume);
+        }
         ChangePanel(0);
-        soundSlider[0].onValueChanged.AddListener(AudioManager.instance.ChangeSfxVolume);
-        soundSlider[1].onValueChanged.AddListener(AudioManager.instance.ChangeMusicVolume);
-        AudioManager.instance.mixer.SetFloat(UsefulConstants.SFXVOLPARAM,PlayerPrefs.GetFloat(UsefulConstants.SFXVOLPARAM));
-        AudioManager.instance.mixer.SetFloat(UsefulConstants.MUSICVOLPARAM,PlayerPrefs.GetFloat(UsefulConstants.MUSICVOLPARAM));
-        soundSlider[0].value = Mathf.Pow(10, (PlayerPrefs.GetFloat(UsefulConstants.SFXVOLPARAM) / 20)) ;
-        soundSlider[1].value = Mathf.Pow(10, (PlayerPrefs.GetFloat(UsefulConstants.MUSICVOLPARAM) / 20));
+        if (PlayerPrefs.HasKey(UsefulConstants.SFXVOLPARAM))
+        {
+            AudioManager.instance.mixer.SetFloat(UsefulConstants.SFXVOLPARAM,PlayerPrefs.GetFloat(UsefulConstants.SFXVOLPARAM));
+            AudioManager.instance.mixer.SetFloat(UsefulConstants.MUSICVOLPARAM,PlayerPrefs.GetFloat(UsefulConstants.MUSICVOLPARAM));
+            soundSlider[0].value = Mathf.Pow(10, (PlayerPrefs.GetFloat(UsefulConstants.SFXVOLPARAM) / 20)) ;
+            soundSlider[1].value = Mathf.Pow(10, (PlayerPrefs.GetFloat(UsefulConstants.MUSICVOLPARAM) / 20));
+        } 
 
     }
 
