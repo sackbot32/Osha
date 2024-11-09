@@ -482,6 +482,8 @@ MonoBehaviour:
   soundSlider:
   - {fileID: 861198632}
   - {fileID: 1307167407}
+  disableIfWeb:
+  - {fileID: 1500126386}
   cursors:
   - {fileID: 2800000, guid: 0d73b909dbd0f4549908d640cc75c649, type: 3}
   - {fileID: 2800000, guid: 93218ee6347fa31409ad45513e659d80, type: 3}
