@@ -63,12 +63,14 @@ public class PauseMenu : MonoBehaviour
         paused = !paused;
         if (paused)
         {
+            CursorChangeStatic.ChangeToSelectCursor();
             Time.timeScale = 0.0f;
             EventSystem.current.SetSelectedGameObject(defaultButton);
             pausePanel.SetActive(true);
         }
         else
         {
+            CursorChangeStatic.ChangeToAimCursor();
             Time.timeScale = 1.0f;
             pausePanel.SetActive(false);
         }

@@ -17,9 +17,14 @@ public class MenuManager : MonoBehaviour
     public Slider[] soundSlider;
     //0 sfx
     //1 music
+    public Texture2D[] cursors;
+    //0 select
+    //1 aim
 
     private void Start()
     {
+        CursorChangeStatic.SetTextures(cursors[0], cursors[1]);
+        CursorChangeStatic.ChangeToSelectCursor();
         //Habria que implementar un settings de fps y vsync pero por ahora
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 0;

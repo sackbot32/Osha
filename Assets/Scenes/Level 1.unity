@@ -965,7 +965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pulsando e o R2 para atacar a donde estes apuntando
+  m_text: Pulsando e o R1 para atacar a donde estes apuntando
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
   m_sharedMaterial: {fileID: 6281279564853841700, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
@@ -1712,7 +1712,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.862117, y: 0.36352998, z: -10}
+  m_LocalPosition: {x: -9.748675, y: 0.34976, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8146,7 +8146,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Apunta con el raton \no con joystick derecho\n\nDispara el gancho con
-    click izquierdo o r1"
+    click izquierdo o r2"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
   m_sharedMaterial: {fileID: 6281279564853841700, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
@@ -47326,7 +47326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -483.71, y: -278.78}
+  m_AnchoredPosition: {x: -488.51, y: -284.68}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1752002421
@@ -48058,7 +48058,7 @@ PrefabInstance:
     - target: {fileID: 8578034074348069736, guid: e735edc2313ca454ba6fa949b2830d63, type: 3}
       propertyPath: music
       value: 
-      objectReference: {fileID: 8300000, guid: 4b81a0aa6d1fe6a43a5f6869cec0d524, type: 3}
+      objectReference: {fileID: 8300000, guid: 508d81aa91ada4047beb81f27d90b68e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

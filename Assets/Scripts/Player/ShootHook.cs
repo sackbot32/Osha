@@ -25,6 +25,7 @@ public class ShootHook : MonoBehaviour
     private PlayerInput playerInput;
     [SerializeField]
     private Transform shootingPivot;
+    private LineRenderer joystickAimer;
     //Settings
     [Header("Settings")]
     [Tooltip("The speed at which the proyectile travels")]
@@ -54,12 +55,24 @@ public class ShootHook : MonoBehaviour
         shortening = false;
         hookPrefab.GetComponent<Hook>().player = gameObject;
         playerInput = GetComponent<PlayerInput>();
+        joystickAimer = shootingPivot.transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<LineRenderer>();
+        joystickAimer.enabled = false;
     }
 
     void Update()
     {
         if (playerInput.currentControlScheme.Equals(UsefulConstants.KEYBOARDMOUSESCHEME) && Time.timeScale == 1)
         {
+            if (!CursorChangeStatic.isAim && Time.timeScale == 1)
+            {
+                CursorChangeStatic.ChangeToAimCursor();
+            }
+            if (!Cursor.visible)
+            {
+                
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
             mousePos = new Vector3(Camera.main.ScreenToWorldPoint(mousePositionInput.action.ReadValue<Vector2>()).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
             shootingPivot.transform.right = (mousePos - transform.position).normalized;
             if (shootHookInput.action.WasPressedThisFrame())
@@ -72,12 +85,26 @@ public class ShootHook : MonoBehaviour
             dir = rightJoyStickDirInput.action.ReadValue<Vector2>();
             if (dir != Vector2.zero)
             {
+                if (Cursor.visible)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                }
                 shootingPivot.transform.right = dir.normalized;
+                if(joystickAimer != null)
+                {
+                    joystickAimer.enabled = true;
+                    joystickAimer.SetPosition(0,shootingPivot.transform.GetChild(0).transform.GetChild(0).position);
+                    joystickAimer.SetPosition(1, shootingPivot.transform.GetChild(0).transform.GetChild(0).position + shootingPivot.transform.right*proyectileDistanceTarget);
+                }
 
                 if (shootHookInput.action.WasPressedThisFrame())
                 {
                     Shoot(dir);
                 }
+            } else
+            {
+                joystickAimer.enabled = false;
             } 
         }
         if(Time.timeScale == 0 && currentHook != null)

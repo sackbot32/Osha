@@ -482,6 +482,9 @@ MonoBehaviour:
   soundSlider:
   - {fileID: 861198632}
   - {fileID: 1307167407}
+  cursors:
+  - {fileID: 2800000, guid: 0d73b909dbd0f4549908d640cc75c649, type: 3}
+  - {fileID: 2800000, guid: 93218ee6347fa31409ad45513e659d80, type: 3}
 --- !u!1 &232055208
 GameObject:
   m_ObjectHideFlags: 0
@@ -4692,7 +4695,7 @@ PrefabInstance:
     - target: {fileID: 8578034074348069736, guid: e735edc2313ca454ba6fa949b2830d63, type: 3}
       propertyPath: music
       value: 
-      objectReference: {fileID: 8300000, guid: 59af223fb904a9f4585129be3e71919c, type: 3}
+      objectReference: {fileID: 8300000, guid: 087c04e7cc92dcb4da7d28e5632f68a6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

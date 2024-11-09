@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
@@ -39,6 +40,7 @@ public class LevelManager : MonoBehaviour
     /// <param name="win"></param>
     public void EndGame(bool win)
     {
+        CursorChangeStatic.ChangeToSelectCursor();
         if (win)
         {
             //when winning and having a higher level beaten it updates it with the current level index
@@ -52,11 +54,12 @@ public class LevelManager : MonoBehaviour
                 PlayerPrefs.SetInt(names.levelNames[SceneManager.GetActiveScene().buildIndex - UsefulConstants.MINSCENE], points);
 
             }
-
             Time.timeScale = 0f;
+            EventSystem.current.SetSelectedGameObject(hud.winHud.transform.GetChild(0).transform.GetChild(1).transform.GetChild(1).gameObject);
             hud.winHud.SetActive(true);
         } else
         {
+            EventSystem.current.SetSelectedGameObject(hud.loseHud.transform.GetChild(0).transform.GetChild(1).transform.GetChild(1).gameObject);
             Time.timeScale = 0f;
             hud.loseHud.SetActive(true);
         }
