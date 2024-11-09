@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,7 +11,9 @@ public class MenuManager : MonoBehaviour
     public GameObject[] panels;
     //0 main menu
     //1 Level Select
-    //2 Settings?
+    //2 Settings
+    public GameObject[] defaultButtons;
+    //They are asigned to the default buttons of the panels
     public Slider[] soundSlider;
     //0 sfx
     //1 music
@@ -20,19 +23,20 @@ public class MenuManager : MonoBehaviour
         //Habria que implementar un settings de fps y vsync pero por ahora
         Application.targetFrameRate = 60;
         QualitySettings.vSyncCount = 0;
-        if(soundSlider.Length > 0)
-        {
-            //soundSlider[0].onValueChanged.AddListener(AudioManager.instance.ChangeSfxVolume);
-            //soundSlider[1].onValueChanged.AddListener(AudioManager.instance.ChangeMusicVolume);
-        }
         ChangePanel(0);
         if (PlayerPrefs.HasKey(UsefulConstants.SFXVOLPARAM))
         {
+            print("llega a sfx");
             AudioManager.instance.mixer.SetFloat(UsefulConstants.SFXVOLPARAM,PlayerPrefs.GetFloat(UsefulConstants.SFXVOLPARAM));
-            AudioManager.instance.mixer.SetFloat(UsefulConstants.MUSICVOLPARAM,PlayerPrefs.GetFloat(UsefulConstants.MUSICVOLPARAM));
             soundSlider[0].value = Mathf.Pow(10, (PlayerPrefs.GetFloat(UsefulConstants.SFXVOLPARAM) / 20)) ;
+            
+        }
+        if (PlayerPrefs.HasKey(UsefulConstants.MUSICVOLPARAM))
+        {
+            print("llega a music");
+            AudioManager.instance.mixer.SetFloat(UsefulConstants.MUSICVOLPARAM, PlayerPrefs.GetFloat(UsefulConstants.MUSICVOLPARAM));
             soundSlider[1].value = Mathf.Pow(10, (PlayerPrefs.GetFloat(UsefulConstants.MUSICVOLPARAM) / 20));
-        } 
+        }
 
     }
 
@@ -52,6 +56,7 @@ public class MenuManager : MonoBehaviour
         {
             panel.SetActive(false);
         }
+        EventSystem.current.SetSelectedGameObject(defaultButtons[whichOne]);
         panels[whichOne].SetActive(true);
     }
     public void Quit()
@@ -59,4 +64,14 @@ public class MenuManager : MonoBehaviour
         print("Game left");
         Application.Quit();
     }
+
+    public void MenuChangeSFXVolume(float volume)
+    {
+        AudioManager.instance.ChangeSfxVolume(volume);
+    }
+    public void MenuChangeMusicVolume(float volume)
+    {
+        AudioManager.instance.ChangeMusicVolume(volume);
+    }
+    
 }

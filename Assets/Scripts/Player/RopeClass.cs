@@ -8,6 +8,7 @@ public class RopeClass : MonoBehaviour
     //Component
     private LineRenderer lineR;
     private DistanceJoint2D disJoint;
+    private ShootHook playerHook;
     //Setting
     [Header("Rope Settings")]
     [Tooltip("How fast will the line points will reach the desired point")]
@@ -32,6 +33,7 @@ public class RopeClass : MonoBehaviour
     private float oldLength;
     void Start()
     {
+        playerHook = GetComponent<ShootHook>();    
         disJoint = GetComponent<DistanceJoint2D>();
         lineR = GetComponent<LineRenderer>();
         if(automaticVisualRopeData)
@@ -45,6 +47,11 @@ public class RopeClass : MonoBehaviour
 
     void Update()
     {
+        if(playerHook.currentHook  == null)
+        {
+            disJoint.enabled = false;
+            lineR.enabled = false;
+        }
         if(disJoint.enabled && lineR.enabled)
         {
             if(automaticVisualRopeData && (oldLength != disJoint.distance))

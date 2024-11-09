@@ -43,7 +43,7 @@ public class ShootHook : MonoBehaviour
     [Tooltip("What at what length does the quickShortening ends")]
     public float shorteningFinalLength;
     //Data
-    private GameObject currentHook;
+    public GameObject currentHook;
     private Vector3 mousePos;
     private Vector2 dir;
     private bool shortening;

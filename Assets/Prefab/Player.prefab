@@ -492,6 +492,9 @@ MonoBehaviour:
   pausePanel: {fileID: 0}
   defaultButton: {fileID: 0}
   pauseButton: {fileID: 6606248627902890063, guid: 2e0c97b7f623cd44ab32440e49b07161, type: 3}
+  soundSlider:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &2767798228552127600
 MonoBehaviour:
   m_ObjectHideFlags: 0

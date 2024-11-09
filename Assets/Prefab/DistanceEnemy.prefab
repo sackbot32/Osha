@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 8904491398039718410}
   - component: {fileID: 6071962583817281163}
   - component: {fileID: 4776603879280707634}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DistanceEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 311630130012127879}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1387311810643281025}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Aimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8820725007643241737}
   - component: {fileID: 8955091208353380674}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TurretSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8370236693896371523}
   - component: {fileID: 974233044777205683}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
