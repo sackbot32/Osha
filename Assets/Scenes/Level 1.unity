@@ -409,7 +409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -488.26, y: -280.19}
+  m_AnchoredPosition: {x: -487.89, y: -279.96}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &159460955
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Para cortar la cuerda pulsa boton central del raton o L2
+  m_text: Para cortar la cuerda pulsa boton central del raton,tabulador,o L2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
   m_sharedMaterial: {fileID: 6281279564853841700, guid: a86291b4fbae2a24dbc50e9802f0d5f0, type: 2}
@@ -1712,7 +1712,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.748675, y: 0.34976, z: -10}
+  m_LocalPosition: {x: -8.866804, y: 0.36346, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47023,7 +47023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3861356136848313161, guid: 3a1d1b97a72863141831081d3bf5b99d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.8
+      value: -1.463
       objectReference: {fileID: 0}
     - target: {fileID: 3861356136848313161, guid: 3a1d1b97a72863141831081d3bf5b99d, type: 3}
       propertyPath: m_LocalPosition.y

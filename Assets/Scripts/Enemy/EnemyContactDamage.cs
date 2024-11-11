@@ -23,6 +23,12 @@ public class EnemyContactDamage : MonoBehaviour
                 } else
                 {
                     healthInterface.TakeDamage(damage, Vector2.zero);
+                    if (collision.GetComponent<Rigidbody2D>())
+                    {
+                        print("para");
+                        collision.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                        collision.GetComponent<Rigidbody2D>().angularVelocity = 0;
+                    }
                     collision.transform.position = teleportPoint.position;
                 }
 

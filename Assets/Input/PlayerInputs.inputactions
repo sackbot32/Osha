@@ -396,6 +396,17 @@
                 },
                 {
                     "name": "",
+                    "id": "e5f385c8-c76d-4101-8f6d-a0410eb84bab",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard and Mouse",
+                    "action": "CutRope",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "579ca111-6d7c-4252-9855-cd74eb2cc239",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
