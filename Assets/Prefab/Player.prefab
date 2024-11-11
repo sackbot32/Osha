@@ -546,6 +546,7 @@ MonoBehaviour:
   quickLengthAmountChange: 8
   quickShorteningRate: 1e-10
   shorteningFinalLength: 0.8
+  quickShorteningImpulse: 300
   currentHook: {fileID: 0}
 --- !u!114 &5315939776762541599
 MonoBehaviour:

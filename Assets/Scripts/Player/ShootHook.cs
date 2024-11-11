@@ -43,6 +43,8 @@ public class ShootHook : MonoBehaviour
     public float quickShorteningRate;
     [Tooltip("What at what length does the quickShortening ends")]
     public float shorteningFinalLength;
+    [Tooltip("how strong is the impulse when done")]
+    public float quickShorteningImpulse;
     //Data
     public GameObject currentHook;
     private Vector3 mousePos;
@@ -208,6 +210,9 @@ public class ShootHook : MonoBehaviour
         }
         if (currentHook != null)
         {
+            //Quick added impulse when 
+            Vector2 pushDir = (currentHook.transform.position - transform.position).normalized;
+            gameObject.GetComponent<Rigidbody2D>().AddForce(pushDir * quickShorteningImpulse);
             AudioManager.instance.StopSfx(6);
             currentHook.GetComponent<Hook>().SafeDestruction();
         }
